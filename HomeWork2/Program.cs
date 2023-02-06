@@ -1,97 +1,58 @@
-﻿/*Задача 2: Напишите программу, которая на вход принимает два числа и выдаёт, какое число большее, а какое меньшее.
+﻿/*Задача 10: Напишите программу, которая принимает на вход трёхзначное число и на выходе показывает вторую цифру этого числа.
+456 -> 5
+782 -> 8
+918 -> 1*/
 
-a = 5; b = 7 -> max = 7
-a = 2 b = 10 -> max = 10
-a = -9 b = -3 -> max = -3*/
-
-Console.WriteLine("Введите первое число: ");
-string numberOne = Console.ReadLine();
-int number1 = Convert.ToInt32(numberOne);
-Console.WriteLine("Введите второе число: ");
-string numberTwo = Console.ReadLine();
-int number2 = Convert.ToInt32(numberTwo);
-if (number1 > number2)
+Console.Write ("Введите трехзначное число: ");
+string strUserNumber = Console.ReadLine ();
+int userNumber = Convert.ToInt32(strUserNumber);
+if (userNumber<1000 && userNumber>99)
 {
-    System.Console.WriteLine($"Первое число: {number1} больше.");
+    System.Console.WriteLine($"Число {userNumber} трехзначное");
+    int secondNumber = (userNumber/10)%10;
+    System.Console.WriteLine($"Вторая цифра этого числа {secondNumber}");
 }
-else if (number1< number2)
-{
-    System.Console.WriteLine($"Второе число: {number2} больше.");
-}
-else
-{
-    System.Console.WriteLine("Числа равны");
+else{
+    System.Console.WriteLine("Введено неверное число");
 }
 
-/*Задача 4: Напишите программу, которая принимает на вход три числа и выдаёт максимальное из этих чисел.
+/*Задача 13: Напишите программу, которая выводит третью цифру заданного числа или сообщает, что третьей цифры нет.
+645 -> 5
+78 -> третьей цифры нет
+32679 -> 6*/
 
-2, 3, 7 -> 7
-44 5 78 -> 78
-22 3 9 -> 22*/
-
-Console.WriteLine("Введите первое число: ");
-string numberA = Console.ReadLine();
-int numberA1 = Convert.ToInt32(numberA);
-Console.WriteLine("Введите второе число: ");
-string numberB = Console.ReadLine();
-int numberB2 = Convert.ToInt32(numberB);
-Console.WriteLine("Введите третье число: ");
-string numberC = Console.ReadLine();
-int numberC3 = Convert.ToInt32(numberC);
-if (numberA1 >= numberB2 && numberA1 >= numberC3 )
+Console.Write ("Введите число: ");
+string strUseNumber = Console.ReadLine ();
+int useNumber = Convert.ToInt32(strUseNumber);
+if (useNumber/100 > 0)
 {
-    System.Console.WriteLine($"Число: {numberA1} наибольшее.");
-}
-else if (numberB2 >= numberA1 && numberB2 >= numberC3 )
-{
-    System.Console.WriteLine($"Число: {numberB2} наибольшее.");
-}
-else 
-{
-    System.Console.WriteLine($"Число: {numberC3} наибольшее.");
-}
-
-
-/*Задача 6: Напишите программу, которая на вход принимает число и выдаёт, является ли число чётным (делится ли оно на два без остатка).
-
-4 -> да
--3 -> нет
-7 -> нет*/
-
-Console.WriteLine("Введите число: ");
-string strnumber = Console.ReadLine();
-int number = Convert.ToInt32(strnumber);
-
-if (number %2 >0)
-{
-    System.Console.WriteLine($"Число: {number} нечетное.");
-}
-else if (number %2 <0)
-{
-    System.Console.WriteLine($"Число: {number} нечетное.");
-}
-else
-{
-    System.Console.WriteLine($"Число: {number} четное.");
-}
-
-/*Задача 8: Напишите программу, которая на вход принимает число (N), а на выходе показывает все чётные числа от 1 до N.
-
-5 -> 2, 4
-8 -> 2, 4, 6, 8*/
-
-Console.WriteLine("Введите число: ");
-string userNumber = Console.ReadLine();
-int variable = Convert.ToInt32(userNumber);
-int a = 1;
-while(a<=variable)
-{
-    if(a%2 == 0)
-    {
-        Console.Write($"{a} ");
+    while(useNumber>999){
+        useNumber = useNumber/10;
     }
-    a++;
+    System.Console.Write($"Третья цифра {strUseNumber} равна = ");
+    int thirdNumber = useNumber%10;
+    System.Console.WriteLine(thirdNumber);
 }
-Console.WriteLine();
+else{
+    System.Console.WriteLine("Третьей цифры в этом числе нет.");
+}
 
-/*End*/
+/*Задача 15: Напишите программу, которая принимает на вход цифру, обозначающую день недели, и проверяет, является ли этот день выходным.
+6 -> да
+7 -> да
+1 -> нет*/
+
+Console.Write ("Введите цифру дня недели: ");
+string strEnterNumber = Console.ReadLine ();
+int dayNumber = Convert.ToInt32(strEnterNumber);
+if (dayNumber>0 && dayNumber<6){
+System.Console.WriteLine("Будний день");
+}
+else if (dayNumber>0 && dayNumber<8){
+    System.Console.WriteLine("Выходной день");
+}
+else {
+System.Console.WriteLine("Введено некорректное число");
+}
+
+//End Work
