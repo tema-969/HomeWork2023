@@ -4,13 +4,25 @@
 12821 -> да
 23432 -> да*/
 
-
-
+System.Console.Write ("Введите число: ");
+int usernumber = int.Parse(Console.ReadLine());
+int variable = 0;
+int number = usernumber;
+while(usernumber>0){
+    variable = variable*10 + usernumber%10;
+    usernumber = usernumber/10;
+}
+if(number==variable){
+    System.Console.WriteLine($"Число {variable} палиндром");
+}
+else{
+    System.Console.WriteLine($"Число {variable} не палиндром");
+}
 
 /*Задача 21
 Напишите программу, которая принимает на вход координаты двух точек и находит расстояние между ними в 3D пространстве.
 A (3,6,8); B (2,1,-7), -> 15.84
-A (7,-5, 0); B (1,-1,9) -> 11.53*
+A (7,-5, 0); B (1,-1,9) -> 11.53*/
 
 System.Console.Write ("Введите координату Х для первой точки: ");
 double dotXone = double.Parse(Console.ReadLine());
