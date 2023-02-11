@@ -30,5 +30,30 @@ else {
 return result;
 }
 
-Exponentiation();
+//Exponentiation();
 
+// Задача 27: Напишите программу, которая принимает на вход число и выдаёт сумму цифр в числе.
+// 452 -> 11
+// 82 -> 10
+// 9012 -> 12
+int SumOfDigits (){
+
+System.Console.Write("Введите число: ");
+int numbUser = int.Parse(Console.ReadLine());
+
+int sumOfDigits=0;
+
+if (numbUser > 10 || numbUser < -10) {
+    while (numbUser !=0) {
+        sumOfDigits =sumOfDigits + numbUser%10;
+        numbUser /=10;
+    }
+    System.Console.WriteLine($"Сумма цифр числа = {sumOfDigits}");
+}
+else {
+    System.Console.WriteLine($"Сумма цифр числа = {numbUser}");
+}
+
+}
+
+SumOfDigits();
