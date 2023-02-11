@@ -5,10 +5,12 @@ var random = new Random();
 var lenRand = random.Next(4, 10);
 int[] arrThree = new int[lenRand];
 
+System.Console.WriteLine("Задача 34");
 FillArray(arrThree,100,1000);
 PrintArray(arrThree);
 System.Console.WriteLine();
 CountEvenNumber(arrThree);
+System.Console.WriteLine();
 
 // void FillThreeArray (int[] numb){
 //     for (int i = 0; i < numb.Length; i++)
@@ -47,10 +49,12 @@ void CountEvenNumber (int[] number){       //Метод поиска четны�
 
 int[] arr = new int[lenRand];
 
+System.Console.WriteLine("Задача 36");
 FillArray(arr,-100,100);
 PrintArray(arr);
 System.Console.WriteLine();
 SumOddNumber(arr);
+System.Console.WriteLine();
 
 void FillArray (int[] numb, int minValue, int maxValue){    //Метод заполнения массива случайными числами
     for (int i = 0; i < numb.Length; i++)
@@ -77,7 +81,8 @@ void SumOddNumber (int[] number){                 //Метод суммы чис
 
 double[] arrComma = new double[lenRand];
 
-FillArrayComa(arrComma,-10,10);
+System.Console.WriteLine("Задача 38");
+FillArrayComa(arrComma,-100,100);
 PrintArrayComma(arrComma);
 System.Console.WriteLine();
 Difference(arrComma);
