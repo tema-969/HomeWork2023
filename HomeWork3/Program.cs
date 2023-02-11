@@ -54,7 +54,7 @@ System.Console.WriteLine(result.ToString("c2"));
 5 -> 1, 8, 27, 64, 125*/
 
 System.Console.Write("Введите число: ");
-int number = int.Parse(Console.ReadLine());
+number = int.Parse(Console.ReadLine());
 
 int i = 1;
 int stepen = 3;
