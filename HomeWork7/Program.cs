@@ -39,6 +39,30 @@ return num;
         {
             System.Console.Write(matrix[i,j] + " ");
         }
-    }
     System.Console.WriteLine();
+    }
+    
  }
+
+// Задача 50. Напишите программу, которая на вход принимает позиции элемента в двумерном массиве, 
+// и возвращает значение этого элемента или же указание, что такого элемента нет.
+// Например, задан массив:
+// 1 4 7 2
+// 5 9 2 3
+// 8 4 2 4
+// 17 -> такого числа в массиве нет
+
+NumberMatrix(matrix);
+
+ double[,] NumberMatrix(double[,] matrix){
+    int numRow = SetNumber("Row");
+    int numCol = SetNumber("Col");
+    if (numRow < numRows  + 1 && numCol <numCollumns){
+        System.Console.WriteLine(matrix[numRow-1,numCol-1]);         //сделал "-1" так как человек начинает счет не с "0" а с "1"
+    }
+    else{
+        System.Console.WriteLine("Error");
+    }
+    return matrix;
+ }
+
