@@ -9,10 +9,10 @@ int numCollumns = SetNumber ("Collums");
 int minValue = SetNumber ("Min Value");
 int maxValue = SetNumber ("Max Value");
 
-var matrix = GetMatrix(numRows, numCollumns, minValue, maxValue);
-Print(matrix);
+// var matrix = GetMatrixDouble(numRows, numCollumns, minValue, maxValue);
+// PrintDouble(matrix);
 
-double[,] GetMatrix(int rows, int collums, int min, int max){
+double[,] GetMatrixDouble(int rows, int collums, int min, int max){                //заполнение массива случайными вещественными числами
     var random = new Random();
     double [,] matrix = new double[rows, collums];
     for (int i = 0; i < rows; i++)
@@ -25,14 +25,14 @@ double[,] GetMatrix(int rows, int collums, int min, int max){
     return matrix;
 }
 
-int SetNumber(string numberName)
+int SetNumber(string numberName)                                  //просим пользователя ввести число
 {
 Console.Write($"Enter number {numberName}: ");
 int num = Convert.ToInt32(Console.ReadLine());
 return num;
 }
 
- void Print(double[,] matrix){
+ void PrintDouble(double[,] matrix){                                    //выводим массив в консоль
     for (int i = 0; i < matrix.GetLength(0); i++)
     {
         for (int j = 0; j < matrix.GetLength(1); j++)
@@ -51,13 +51,39 @@ return num;
 // 5 9 2 3
 // 8 4 2 4
 // 17 -> такого числа в массиве нет
+var matrixIntager = GetMatrixInteger(numRows, numCollumns, minValue, maxValue);
+PrintIntager(matrixIntager);
+// NumberMatrix(matrixIntager);
 
-NumberMatrix(matrix);
+ void PrintIntager(int[,] matrix){                                    //выводим массив в консоль
+    for (int i = 0; i < matrix.GetLength(0); i++)
+    {
+        for (int j = 0; j < matrix.GetLength(1); j++)
+        {
+            System.Console.Write(matrix[i,j] + " ");
+        }
+    System.Console.WriteLine();
+    }
+    
+ }
 
- double[,] NumberMatrix(double[,] matrix){
+int[,] GetMatrixInteger(int rows, int collums, int min, int max){          //заполняем массив случайными целыми числами
+    var random = new Random();
+    int [,] matrixInteger = new int[rows, collums];
+    for (int i = 0; i < rows; i++)
+    {
+        for (int j = 0; j < collums; j++)
+        {
+            matrixInteger[i,j] = new Random().Next(min, max+1);
+        }
+    }
+    return matrixInteger;
+}
+
+ int[,] NumberMatrix(int[,] matrix){                              //выводим число выбраное пользователем из матрицы в консоль
     int numRow = SetNumber("Row");
     int numCol = SetNumber("Col");
-    if (numRow < numRows  + 1 && numCol <numCollumns){
+    if (numRow <= numRows && numCol <= numCollumns){
         System.Console.WriteLine(matrix[numRow-1,numCol-1]);         //сделал "-1" так как человек начинает счет не с "0" а с "1"
     }
     else{
@@ -66,3 +92,25 @@ NumberMatrix(matrix);
     return matrix;
  }
 
+// Задача 52. Задайте двумерный массив из целых чисел. Найдите среднее арифметическое элементов в каждом столбце.
+// Например, задан массив:
+// 1 4 7 2
+// 5 9 2 3
+// 8 4 2 4
+// Среднее арифметическое каждого столбца: 4,6; 5,6; 3,6; 3.
+
+AverageColums(matrixIntager);
+
+double AverageColums(int[,] matrix){
+    double avg = 0;
+    for (int i = 0; i < matrix.GetLength(1); i++)
+    {
+        for (int j = 0; j < matrix.GetLength(0); j++)
+        {
+            avg=avg + matrix[j,i];
+        }
+        System.Console.Write(avg/matrix.GetLength(1) + " ");
+        avg=0;
+    }
+    return avg;
+}
