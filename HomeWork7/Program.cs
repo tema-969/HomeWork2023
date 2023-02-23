@@ -99,7 +99,7 @@ int[,] GetMatrixInteger(int rows, int collums, int min, int max){          //з�
 // 8 4 2 4
 // Среднее арифметическое каждого столбца: 4,6; 5,6; 3,6; 3.
 
-//AverageColums(matrixIntager);
+AverageColums(matrixIntager);
 
 double AverageColums(int[,] matrix){                                // вычисляем среднее арифметическое столбца.
     double avg = 0;
