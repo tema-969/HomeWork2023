@@ -9,8 +9,8 @@ int numCollumns = SetNumber ("Collums");
 int minValue = SetNumber ("Min Value");
 int maxValue = SetNumber ("Max Value");
 
-// var matrix = GetMatrixDouble(numRows, numCollumns, minValue, maxValue);
-// PrintDouble(matrix);
+ var matrix = GetMatrixDouble(numRows, numCollumns, minValue, maxValue);
+ PrintDouble(matrix);
 
 double[,] GetMatrixDouble(int rows, int collums, int min, int max){                //заполнение массива случайными вещественными числами
     var random = new Random();
@@ -51,9 +51,9 @@ return num;
 // 5 9 2 3
 // 8 4 2 4
 // 17 -> такого числа в массиве нет
-// var matrixIntager = GetMatrixInteger(numRows, numCollumns, minValue, maxValue);
-// PrintIntager(matrixIntager);
-// NumberMatrix(matrixIntager);
+var matrixIntager = GetMatrixInteger(numRows, numCollumns, minValue, maxValue);
+ PrintIntager(matrixIntager);
+ NumberMatrix(matrixIntager);
 
  void PrintIntager(int[,] matrix){                                    //выводим массив в консоль
     for (int i = 0; i < matrix.GetLength(0); i++)
