@@ -51,8 +51,8 @@ return num;
 // 5 9 2 3
 // 8 4 2 4
 // 17 -> такого числа в массиве нет
-var matrixIntager = GetMatrixInteger(numRows, numCollumns, minValue, maxValue);
-PrintIntager(matrixIntager);
+// var matrixIntager = GetMatrixInteger(numRows, numCollumns, minValue, maxValue);
+// PrintIntager(matrixIntager);
 // NumberMatrix(matrixIntager);
 
  void PrintIntager(int[,] matrix){                                    //выводим массив в консоль
@@ -99,9 +99,9 @@ int[,] GetMatrixInteger(int rows, int collums, int min, int max){          //з�
 // 8 4 2 4
 // Среднее арифметическое каждого столбца: 4,6; 5,6; 3,6; 3.
 
-AverageColums(matrixIntager);
+//AverageColums(matrixIntager);
 
-double AverageColums(int[,] matrix){
+double AverageColums(int[,] matrix){                                // вычисляем среднее арифметическое столбца.
     double avg = 0;
     for (int i = 0; i < matrix.GetLength(1); i++)
     {
@@ -113,4 +113,32 @@ double AverageColums(int[,] matrix){
         avg=0;
     }
     return avg;
+}
+
+// Задача 62. Напишите программу, которая заполнит спирально массив 4 на 4.
+// Например, на выходе получается вот такой массив:
+// 01 02 03 04
+// 12 13 14 05
+// 11 16 15 06
+// 10 09 08 07
+
+int n = 4;
+int[,] sqareMatrix = new int[n, n];
+
+int temp = 1;
+int i = 0;
+int j = 0;
+
+while (temp <= sqareMatrix.GetLength(0) * sqareMatrix.GetLength(1))
+{
+  sqareMatrix[i, j] = temp;
+  temp++;
+  if (i <= j + 1 && i + j < sqareMatrix.GetLength(1) - 1)
+    j++;
+  else if (i < j && i + j >= sqareMatrix.GetLength(0) - 1)
+    i++;
+  else if (i >= j && i + j > sqareMatrix.GetLength(1) - 1)
+    j--;
+  else
+    i--;
 }
